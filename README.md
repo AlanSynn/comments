@@ -32,6 +32,14 @@ When adding a new website:
 2. Choose a unique permanent site key.
 3. Use the shared `Comments` Discussion category.
 4. Use `specific` mapping.
+
+The `Comments` category must stay in **Announcement** format and must not
+be made answerable (never Q&A or Poll): the Announcement format means
+visitors cannot create top-level Discussions in this repo — giscus
+creates every thread itself from a `specific` term — while replies
+(comment posting) remain open. Changing the format would let anyone
+open arbitrary Discussions here.
+
 5. Never reuse another site's mapping namespace.
 
 Avoid wildcard origin rules unless there is a concrete requirement.
