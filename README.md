@@ -1,2 +1,45 @@
 # comments
-Shared GitHub Discussions backend for comments across Alan Synn sites.
+
+Shared GitHub Discussions backend for comments across Alan Synn websites.
+
+Comments are rendered with giscus and stored as GitHub Discussions.
+
+## Mapping contract
+
+Every embedding site must use:
+
+mapping = specific
+
+with the term:
+
+<site-key>:<content-kind>:<stable-content-id>
+
+Examples:
+
+- alansynn:blog:example-post
+- project-x:docs:introduction
+
+Do not use pathname as the shared-repository mapping strategy because
+different sites may have identical paths.
+
+## Origins
+
+Allowed embedding origins are explicitly listed in `giscus.json`.
+
+When adding a new website:
+
+1. Add its exact canonical origin to `giscus.json`.
+2. Choose a unique permanent site key.
+3. Use the shared `Comments` Discussion category.
+4. Use `specific` mapping.
+5. Never reuse another site's mapping namespace.
+
+Avoid wildcard origin rules unless there is a concrete requirement.
+
+## Moderation
+
+All comments are stored in GitHub Discussions.
+
+Moderate comments directly through GitHub.
+
+This repository contains no application backend and no user database.
